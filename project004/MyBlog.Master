@@ -1,0 +1,140 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="MyBlog.Master.cs" Inherits="B_Project.MyBlog" %>
+
+<!DOCTYPE html>
+
+<html>
+<head runat="server">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <title></title>
+    <asp:ContentPlaceHolder ID="head" runat="server">
+    </asp:ContentPlaceHolder>
+        <style type="text/css">
+        .header { 
+            min-height: 100px;
+            min-width: 600px;
+            background-color: #213A73;
+            color: white;
+            font-size: xx-large;
+            text-align: center;
+            padding-top: 10px;
+            padding-left: 20px;
+            padding-right: 20px;
+            padding-bottom: 10px;
+            font-family: "Noto Sans KR";
+        }
+        .nav { 
+           float: left;
+           width: 13.85%;
+        }
+        .body { 
+            float: left; 
+            width: 86.15%;
+            background-color: white;
+        }
+        .footer {
+            clear: both;
+            height: 40px; 
+            background-color: #F2F2F2;
+            padding: 20px; 
+            color: black;
+            font-size: small; 
+            text-align: center;
+        }
+
+        .btn_top {
+            font-family: "Noto Sans KR";
+            font-size: small;
+            text-align: right;
+        }
+        .btn_topMenu {
+            font-family: "Noto Sans KR";
+            font-size: small;
+            color: white;
+        }
+
+        .navMenu {
+            font-family: "Noto Sans KR";
+            padding-left: 20px;
+            font-size: large;
+        }
+
+        .imgbody{
+            width:100%;
+        }
+        .nonBord{
+            text-decoration:none;
+        }
+        .nonBord2{
+            text-decoration:none;
+            color:black;
+        }
+    </style>
+</head>
+<body>
+    <form id="form1" runat="server">
+
+        <div class="header">
+            <asp:Panel ID="Panel1" runat="server">
+                <div class="btn_top">
+                    <asp:Button ID="Button1" runat="server" Text="HOME" BackColor="#213A73" BorderStyle="None" CssClass="btn_topMenu" Width="70px" ForeColor="White" PostBackUrl="~/Home.aspx" />&nbsp;&nbsp;&nbsp;
+                    <asp:Button ID="Button2" runat="server" Text="LOGIN" BackColor="#213A73" BorderStyle="None" CssClass="btn_topMenu" Width="70px" ForeColor="White" PostBackUrl="~/MyLogin.aspx"/></div>
+            </asp:Panel>
+            <asp:Panel ID="Panel2" runat="server">
+                <div class="btn_top">
+                    <asp:Button ID="Button6" runat="server" Text="LOGOUT" BackColor="#213A73" BorderStyle="None" CssClass="btn_topMenu" Width="90px" ForeColor="White" OnClick="Button6_Click" CausesValidation="False" />&nbsp;&nbsp;&nbsp;
+                    <asp:Button ID="Button7" runat="server" Text="EDIT" BackColor="#213A73" BorderStyle="None" CssClass="btn_topMenu" Width="50px" ForeColor="White" CausesValidation="False" PostBackUrl="~/MemberOnly/Modify.aspx" /></div>
+            </asp:Panel>
+            <strong>배꼬지&#39;s Blog
+            </strong>
+        </div>
+
+        <div class="nav">
+            <div class="navMenu">
+                <asp:Panel ID="Panel3" runat="server">
+                <br />
+                    <asp:Image ID="Image2" runat="server" Width="100px" Height="100px" />
+                    <br />
+                    <asp:Label ID="Label1" runat="server" Text=""></asp:Label>
+
+                    <asp:Label ID="Label2" runat="server" Text=""></asp:Label>
+                </asp:Panel>
+                <br />
+
+                <strong>
+                <asp:HyperLink ID="HyperLink1" runat="server" ForeColor="#213A73" NavigateUrl="~/Home.aspx" CssClass="nonBord">Home</asp:HyperLink>
+                </strong>
+
+                <br />
+                <asp:HyperLink ID="HyperLink2" runat="server" NavigateUrl="~/VisitorList.aspx" CssClass="nonBord2">방명록</asp:HyperLink>
+                <br />
+                <asp:HyperLink ID="HyperLink3" runat="server" CssClass="nonBord2" NavigateUrl="~/List.aspx">팀원소개</asp:HyperLink>
+                <br />
+                <asp:HyperLink ID="HyperLink4" runat="server" NavigateUrl="~/LogList.aspx" CssClass="nonBord2">활동내역</asp:HyperLink>
+                <br />
+                <asp:HyperLink ID="HyperLink5" runat="server" NavigateUrl="~/ScheduleList.aspx" CssClass="nonBord2">프로젝트 일정</asp:HyperLink>
+                <br />
+                <asp:HyperLink ID="HyperLink6" runat="server" NavigateUrl="~/KeyFunction.aspx" CssClass="nonBord2">프로젝트 기능</asp:HyperLink>
+                <br />
+                <asp:HyperLink ID="HyperLink7" runat="server" NavigateUrl="~/MemberOnly/Outlay.aspx" CssClass="nonBord2">지출현황</asp:HyperLink>
+                <br />
+                <asp:HyperLink ID="HyperLink8" runat="server" NavigateUrl="~/docu/List.aspx" CssClass="nonBord2">자료실</asp:HyperLink>
+                <br />
+                <br />
+            </div>
+
+        </div>
+        <div class="body">
+            <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+            </asp:ContentPlaceHolder>
+        </div>
+
+        <div class="footer">
+            03039
+           서울특별시 종로구 필운대로 1길 34 배화여자대학교
+           TEL. 02-397-0541 ㅣ FAX. 02-737-7260<br>
+           Copyright ⓒ BEAWHA WOMEN’S UNIVERSITY. All Rights Reserved.
+        </div>
+
+    </form>
+</body>
+</html>
